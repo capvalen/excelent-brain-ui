@@ -25,8 +25,32 @@ const router = createRouter({
 		{
       path: '/panel',
       name: 'panel',
+			redirect: 'panel/dashboard',
       component: () => import('../Panel.vue'),
+			children:[
+				{
+					path: '/dashboard',
+					name: 'dashboard',
+					component: () => import('../views/Citas/Dashboard.vue'),
+				},
+				{
+					path: '/calendario',
+					name: 'calendario',
+					component: () => import('../views/Citas/Calendario.vue'),
+				},
+				{
+					path: '/pacientes',
+					name: 'pacientes',
+					component: () => import('../views/Pacientes/PacientesIndex.vue'),
+				},
+				{
+					path: '/paciente/:id',
+					name: 'paciente',
+					component: () => import('../views/Pacientes/PacientePerfil.vue'),
+				},
+			]
     },
+		
   ],
 })
 

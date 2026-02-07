@@ -1,0 +1,53 @@
+:root {
+  --bs-success: #21C45D;
+  --bs-success-rgb: 33, 196, 93;
+  --bs-success-text-emphasis: #21C45D;
+	--bs-danger: #ef4343;
+	--bs-danger-rgb: 239, 67, 67;
+  --bs-danger-text-emphasis: #ef4343;
+	--bs-alert-bg: #f9ebe8;
+
+}
+.breadcrumb-item + .breadcrumb-item::before {
+	font-family: "bootstrap-icons";
+}
+.dash-card {
+	border-radius: 14px;
+	border: 1px solid #e9ecef;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, .04);
+}
+.stat-card {
+	border-left: 5px solid transparent;
+	border-radius: 12px;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, .06);
+	border-color: rgb(229, 231, 235)
+}
+
+.stat-card.borde-primary {
+	border-left-color: #0d6efd;
+}
+
+.stat-card.borde-success {
+	border-left-color: #21C45D
+}
+.stat-card.borde-warning {
+	border-left-color: #fbd900
+}
+
+.stat-card.borde-secondary {
+	border-left-color: #6c757d;
+}
+
+.stat-card.borde-danger {
+	border-left-color: #dc3545;
+}
+
+.stat-card .icon {
+	width: 48px;
+	height: 48px;
+	border-radius: 12px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 1.4rem;
+}

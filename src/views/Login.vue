@@ -16,7 +16,7 @@
 								</p>
 								<p class="welcome-text mt-4">
 									<i class="bi bi-exclamation-circle"></i>
-									¿Deseas iniciar como profesional de la salud? <a href="#" class="text-secondary text-decoration-none fw-bold">Puedes hacerlo desde aquí</a>
+									¿Deseas iniciar como profesional de la salud? <a href="https://app.excelentemente.com" class="text-secondary text-decoration-none fw-bold">Puedes hacerlo desde aquí</a>
 								</p>
 							</div>
 						</div>
