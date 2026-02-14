@@ -52,7 +52,7 @@
 									</div>
 
 									<div class="d-grid mb-4">
-										<RouterLink to="/panel" type="submit" class="btn btn-login text-white">Iniciar sesión</RouterLink>
+										<a href="/dashboard" type="submit" class="btn btn-login text-white">Iniciar sesión</a>
 									</div>
 								</form>
 							</div>

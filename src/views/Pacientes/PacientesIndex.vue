@@ -155,7 +155,7 @@
 
 		<div class="row">
 			<div class="col">
-				<div class="card shadow-sm border-0 rounded-4 p-4" >
+				<div class="card shadow-sm border-0 rounded-4 p-4">
 					<h5 class="fw-bold mb-4">Tipos de Atención</h5>
 					<div style="height: 250px;">
 						<Doughnut :data="chartData" :options="chartOptions" />
@@ -168,6 +168,135 @@
 					<div style="height: 250px;">
 						<Bar :data="chartDataLinear" :options="chartOptionsLinear" />
 					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="d-flex justify-content-between px-5">
+			<h5>Listado de pacientes</h5>
+			<a class="text-decoration-none" href="#">Ver todos <i class="bi bi-arrow-right"></i></a>
+		</div>
+
+		<div class="card">
+			<div class="card-body">
+				<div class="table-responsive">
+					<table class="table align-middle mb-0 table-hover">
+						<thead class="text-muted small text-uppercase">
+							<tr>
+								<th>Paciente</th>
+								<th>Estado</th>
+								<th>Próxima cita</th>
+								<th>Deuda</th>
+								<th>Última visita</th>
+								<th class="text-center">Acciones</th>
+							</tr>
+						</thead>
+						<tbody>
+
+							<!-- Paciente 1 -->
+							<tr>
+								<td>
+									<div class="d-flex align-items-center gap-3">
+										<div class="avatar bg-primary-subtle text-primary">
+											AG
+										</div>
+										<router-link class="text-decoration-none" cla to="paciente/1">
+											<div class="fw-semibold">Ana García López</div>
+											<small class="text-muted">34 años · Femenino</small>
+										</router-link>
+									</div>
+								</td>
+
+								<td>
+									<span class="badge rounded-pill bg-success-subtle text-success border border-success fw-normal">
+										<i class="bi bi-heart me-1"></i> Activo
+									</span>
+								</td>
+
+								<td title="Hoy">
+									<i class="bi bi-calendar text-primary me-2"></i>
+									10:30 a.m.
+								</td>
+
+								<td class="text-muted">
+									S/ 0.00
+								</td>
+
+								<td class="text-muted">
+									15 Ene 2026
+								</td>
+
+								<td class="d-flex justify-content-end gap-2">
+									<router-link to="/paciente/1" class="btn btn-outline-secondary border-0"><i
+											class="bi bi-eye"></i></router-link>
+									<router-link to="/paciente/1" class="btn btn-outline-secondary border-0"><i
+											class="bi bi-chat-left-text"></i></router-link>
+									<div class="dropdown">
+										<button class="btn btn-outline-secondary border-0 dropdown-toggle" data-bs-toggle="dropdown" ><i
+												class="bi bi-three-dots-vertical"></i></button>
+										<ul class="dropdown-menu">
+											<li><router-link to="paciente/1" class="dropdown-item"><i class="bi bi-eye"></i> Ver perfil</router-link></li>
+											<li><a class="dropdown-item" href="#"><i class="bi bi-calendar"></i> Agendar cita</a></li>
+											<li><a class="dropdown-item" href="#"><i class="bi bi-telephone"></i> Llamar</a></li>
+											<li><a class="dropdown-item" href="#"><i class="bi bi-whatsapp"></i> Whatsapp</a></li>
+										</ul>
+									</div>
+								</td>
+							</tr>
+
+							<!-- Paciente 2 -->
+							<tr>
+								<td>
+									<div class="d-flex align-items-center gap-3">
+										<div class="avatar bg-primary-subtle text-primary">
+											CM
+										</div>
+										<router-link class="text-decoration-none" to="paciente/1">
+											<div class="fw-semibold">Carlos Mendoza Ruiz</div>
+											<small class="text-muted">45 años · Masculino</small>
+										</router-link>
+									</div>
+								</td>
+
+								<td>
+									<span class="badge rounded-pill bg-danger-subtle text-danger border border-danger fw-normal">
+										<i class="bi bi-exclamation-triangle me-1"></i> SOS
+									</span>
+								</td>
+
+								<td title="Hoy">
+									<i class="bi bi-calendar text-primary me-2"></i>
+									11:00 a.m.
+								</td>
+
+								<td class="text-warning fw-semibold">
+									S/ 150.00
+								</td>
+
+								<td class="text-muted">
+									28 Ene 2026
+								</td>
+
+								<td class="d-flex justify-content-end gap-2">
+									<router-link to="/paciente/1" class="btn btn-outline-secondary border-0"><i
+											class="bi bi-eye"></i></router-link>
+									<router-link to="/paciente/1" class="btn btn-outline-secondary border-0"><i
+											class="bi bi-chat-left-text"></i></router-link>
+									<div class="dropdown">
+										<button class="btn btn-outline-secondary border-0 dropdown-toggle" data-bs-toggle="dropdown" ><i
+												class="bi bi-three-dots-vertical"></i></button>
+										<ul class="dropdown-menu">
+											<li><router-link to="paciente/1" class="dropdown-item"><i class="bi bi-eye"></i> Ver perfil</router-link></li>
+											<li><a class="dropdown-item" href="#"><i class="bi bi-calendar"></i> Agendar cita</a></li>
+											<li><a class="dropdown-item" href="#"><i class="bi bi-telephone"></i> Llamar</a></li>
+											<li><a class="dropdown-item" href="#"><i class="bi bi-whatsapp"></i> Whatsapp</a></li>
+										</ul>
+									</div>
+								</td>
+							</tr>
+
+						</tbody>
+					</table>
 				</div>
 			</div>
 		</div>
@@ -190,21 +319,21 @@ const chartData = {
 	}]
 }
 const chartDataLinear = {
-  labels: ['Confirmadas', 'Pendientes', 'Canceladas', 'Reprogramadas'],
-  datasets: [
-    {
-      data: [95, 45, 15, 25], // Valores de ejemplo según tu imagen
-      backgroundColor: [
-        '#2ecc71', // Verde
-        '#f39c12', // Naranja/Amarillo
-        '#e74c3c', // Rojo
-        '#3498db'  // Azul
-      ],
-      borderRadius: 5, // Bordes redondeados
-      borderSkipped: false,
-      barThickness: 25, // Grosor de las barras
-    }
-  ]
+	labels: ['Confirmadas', 'Pendientes', 'Canceladas', 'Reprogramadas'],
+	datasets: [
+		{
+			data: [95, 45, 15, 25], // Valores de ejemplo según tu imagen
+			backgroundColor: [
+				'#2ecc71', // Verde
+				'#f39c12', // Naranja/Amarillo
+				'#e74c3c', // Rojo
+				'#3498db'  // Azul
+			],
+			borderRadius: 5, // Bordes redondeados
+			borderSkipped: false,
+			barThickness: 25, // Grosor de las barras
+		}
+	]
 }
 
 const chartOptions = {
@@ -222,30 +351,45 @@ const chartOptions = {
 	}
 }
 const chartOptionsLinear = {
-  indexAxis: 'y', // <--- Esto hace que las barras sean HORIZONTALES
-  responsive: true,
-  maintainAspectRatio: false,
-  plugins: {
-    legend: { display: false }, // Ocultamos la leyenda superior
-  },
-  scales: {
-    x: {
-      display: false, // Oculta el eje X (números abajo) para copiar la imagen
-      grid: { display: false }
-    },
-    y: {
-      grid: { display: false }, // Quita las líneas de fondo
-      border: { display: false },
-      ticks: {
-        color: '#6c757d', // Color de texto grisáceo
-        font: { size: 14 }
-      },
-			
-			afterFit: function(scale) {
-        scale.paddingTop = 10;    // Reduce espacio arriba de cada barra
-        scale.paddingBottom = 50; // Reduce espacio abajo de cada barra
-      }
-    }
-  }
+	indexAxis: 'y', // <--- Esto hace que las barras sean HORIZONTALES
+	responsive: true,
+	maintainAspectRatio: false,
+	plugins: {
+		legend: { display: false }, // Ocultamos la leyenda superior
+	},
+	scales: {
+		x: {
+			display: false, // Oculta el eje X (números abajo) para copiar la imagen
+			grid: { display: false }
+		},
+		y: {
+			grid: { display: false }, // Quita las líneas de fondo
+			border: { display: false },
+			ticks: {
+				color: '#6c757d', // Color de texto grisáceo
+				font: { size: 14 }
+			},
+
+			afterFit: function (scale) {
+				scale.paddingTop = 10;    // Reduce espacio arriba de cada barra
+				scale.paddingBottom = 50; // Reduce espacio abajo de cada barra
+			}
+		}
+	}
 }
 </script>
+
+<style scoped>
+.badge {
+	font-size: 0.9em;
+}
+/* Elimina la flecha del dropdown-toggle */
+.dropdown-toggle::after {
+    display: none !important;
+}
+
+/* O si prefieres ser más específico */
+.btn.dropdown-toggle::after {
+    display: none !important;
+}
+</style>

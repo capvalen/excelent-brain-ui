@@ -2,11 +2,14 @@
 	<div class="container-fluid">
 		<nav style="--bs-breadcrumb-divider: '\F234';" aria-label="breadcrumb">
 			<ol class="breadcrumb">
-				<li class="breadcrumb-item"><router-link class="text-decoration-none" to="/dashboard"><i class="bi bi-cloud"></i>
+				<li class="breadcrumb-item"><router-link class="text-decoration-none" to="/dashboard"><i
+							class="bi bi-cloud"></i>
 						Dashboard</router-link></li>
-				<li class="breadcrumb-item"><router-link class="text-decoration-none" to="/pacientes"><i class="bi bi-person"></i>
+				<li class="breadcrumb-item"><router-link class="text-decoration-none" to="/pacientes"><i
+							class="bi bi-person"></i>
 						Pacientes</router-link></li>
-				<li class="breadcrumb-item active" aria-current="page"><i class="bi bi-file-person"></i> Perfil del paciente</li>
+				<li class="breadcrumb-item active" aria-current="page"><i class="bi bi-file-person"></i> Perfil del paciente
+				</li>
 			</ol>
 		</nav>
 	</div>
@@ -24,8 +27,9 @@
 
 					<div class="ms-3">
 						<div class="d-flex align-items-center mb-1">
-							<h4 class="mb-2 fw-bold me-2 text-dark" >Carlos Mendoza Ruiz</h4>
-							<span class="badge rounded-pill border border-danger text-danger bg-danger bg-opacity-10 px-3 me-2 fw-normal">
+							<h4 class="mb-2 fw-bold me-2 text-dark">Carlos Mendoza Ruiz</h4>
+							<span
+								class="badge rounded-pill border border-danger text-danger bg-danger bg-opacity-10 px-3 me-2 fw-normal">
 								<i class="bi bi-exclamation-triangle me-1"></i> SOS
 							</span>
 							<span class="badge rounded-pill border border-info text-info bg-info bg-opacity-10 px-3 fw-normal">
@@ -39,8 +43,7 @@
 							<span
 								class="badge rounded-pill bg-success bg-opacity-10 text-success border border-success-subtle fw-normal">Cooperador</span>
 							<span
-								class="badge rounded-pill bg-morado bg-opacity-10 text-primary border border-primary-subtle fw-normal"
-								>Depresivo</span>
+								class="badge rounded-pill bg-morado bg-opacity-10 text-primary border border-primary-subtle fw-normal">Depresivo</span>
 						</div>
 
 						<div class="text-secondary small">
@@ -52,10 +55,12 @@
 				</div>
 
 				<div class="d-flex flex-column gap-2 me-lg-4 mb-3 mb-lg-0">
-					<div class="px-3 py-2 bg-primary bg-opacity-10 rounded-3 text-primary-emphasis d-flex align-items-center" title="Próxima cita">
+					<div class="px-3 py-2 bg-primary bg-opacity-10 rounded-3 text-primary-emphasis d-flex align-items-center"
+						title="Próxima cita">
 						<i class="bi bi-calendar-event me-2"></i> Miércoles, 3 de Julio 11:00 a.m.
 					</div>
-					<div class="px-3 py-2 bg-warning bg-opacity-10 rounded-3 text-warning-emphasis d-flex align-items-center" title="Saldo a favor">
+					<div class="px-3 py-2 bg-warning bg-opacity-10 rounded-3 text-warning-emphasis d-flex align-items-center"
+						title="Saldo a favor">
 						<span class="me-2"><i class="bi bi-cash-coin"></i></span> S/ 150.00
 					</div>
 				</div>
@@ -78,13 +83,65 @@
 						</button>
 					</div>
 				</div>
+			</div>
 
+			<div class="row my-3">
+				<div class="col">
+					<ul class="nav nav-tabs" id="myTab" role="tablist">
+						<li class="nav-item" role="presentation">
+							<button class="nav-link active" id="resumen-tab" data-bs-toggle="tab" data-bs-target="#resumen-tab-pane"
+								type="button" role="tab" aria-controls="resumen-tab-pane" aria-selected="true"><i class="bi bi-brightness-high"></i> Resumen</button>
+						</li>
+						<li class="nav-item" role="presentation">
+							<button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane"
+								type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false"><i class="bi bi-brightness-high"></i> Datos personales</button>
+						</li>
+						<li class="nav-item" role="presentation">
+							<button class="nav-link" id="citas-tab" data-bs-toggle="tab" data-bs-target="#citas-tab-pane"
+								type="button" role="tab" aria-controls="citas-tab-pane" aria-selected="false"><i class="bi bi-brightness-high"></i> Citas & Paquetes</button>
+						</li>
+						<li class="nav-item" role="presentation">
+							<button class="nav-link" id="disabled-tab" data-bs-toggle="tab" data-bs-target="#disabled-tab-pane"
+								type="button" role="tab" aria-controls="disabled-tab-pane" aria-selected="false"
+								disabled><i class="bi bi-brightness-high"></i> Disabled</button>
+						</li>
+					</ul>
+				</div>
+
+				<div class="row">
+					<div class="col mt-4">
+						<div class="tab-content" id="myTabContent">
+							<div class="tab-pane fade show active" id="resumen-tab-pane" role="tabpanel" aria-labelledby="resumen-tab"
+								tabindex="0">
+								<Resumen></Resumen>
+							</div>
+							<div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab"
+								tabindex="0">
+								<Profile></Profile>
+							</div>
+							<div class="tab-pane fade" id="citas-tab-pane" role="tabpanel" aria-labelledby="citas-tab"
+								tabindex="0">
+								<CitasPaquetes></CitasPaquetes>
+							</div>
+							<div class="tab-pane fade" id="disabled-tab-pane" role="tabpanel" aria-labelledby="disabled-tab"
+								tabindex="0">...</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
 </template>
+<script setup>
+import Resumen from '../../components/Pacientes/Resumen.vue'
+import Profile from '../../components/Pacientes/Profile.vue'
+import CitasPaquetes from '../../components/Pacientes/CitasPaquetes.vue'
+
+</script>
 <style>
-.bg-morado{
-	--bs-bg-opacity: .1; color: #6f42c1 !important; border-color: #6f42c1 !important;
+.bg-morado {
+	--bs-bg-opacity: .1;
+	color: #6f42c1 !important;
+	border-color: #6f42c1 !important;
 }
 </style>

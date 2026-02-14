@@ -25,7 +25,7 @@ const router = createRouter({
 		{
       path: '/panel',
       name: 'panel',
-			redirect: 'panel/dashboard',
+			redirect: '/dashboard',
       component: () => import('../Panel.vue'),
 			children:[
 				{
