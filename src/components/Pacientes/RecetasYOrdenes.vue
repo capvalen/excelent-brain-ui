@@ -106,7 +106,7 @@ const historial = ref([
 		doctor: "Dra Ana Rojas",
 		titulo: "Inventario de Ansiedad de Beck (BAI)",
 		enfermedad: "Ansiedad Total",
-		nota: 42,
+		nota: 41,
 		total: 63,
 		comentario: "Severo",
 		diagnostico: "Ansiedad severa",
