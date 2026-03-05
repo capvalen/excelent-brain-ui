@@ -114,7 +114,7 @@ const historial = ref([
 		recomendaciones: "Iniciar psicoterapia TCC. Considerar interconsulta psiquiátrica."
 	},
 	{
-		fecha: "15 mar 2024",
+		fecha: "15 ene 2024",
 		siglas: "BDI-II",
 		doctor: "dra. ana rojas",
 		titulo: "Inventario de Depresión de Beck (BDI-II)",
