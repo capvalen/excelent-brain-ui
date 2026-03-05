@@ -95,7 +95,7 @@ onMounted(() => {
 </script>
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
 #menu {
 	background: linear-gradient(#1cc89a, #0069ac);
 	min-height: 100vh;

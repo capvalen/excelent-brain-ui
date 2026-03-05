@@ -3,12 +3,17 @@
 		<small class="text-muted">Sesiones usadas</small>
 		<div class="fw-semibold">{{ usadas }} / {{ total }}</div>
 	</div>
-	<div style="height: 60px;" class="mt-2">
+	<div style="height: 40px;" class="mt-2 w-75" >
 		<Bar :data="chartData" :options="chartOptions" />
 	</div>
-	<small class="text-muted d-block mt-2">
-		{{restantes}} sesiones restantes
-	</small>
+	<div class="d-flex justify-content-between">
+		<small class="text-muted d-block mt-2">
+			{{restantes}} sesiones restantes
+		</small>
+		<small class="text-danger d-block mt-2 fw-medium" v-if="vencidas>0">
+			<i class="bi bi-exclamation-triangle"></i> {{vencidas}} vencida(s)
+		</small>
+	</div>
 
 </template>
 <script setup>
@@ -19,9 +24,10 @@ import { Bar } from 'vue-chartjs'
 import { computed } from 'vue'
 
 ChartJS.register(BarElement, CategoryScale, LinearScale, Tooltip)
-const props = defineProps(['usadas', 'total'])
+const props = defineProps(['usadas', 'total', 'vencidas'])
 const usadas = props.usadas
 const total = props.total
+const vencidas = props.vencidas
 const restantes = total - usadas
 
 const chartData = computed(() => ({
@@ -31,17 +37,21 @@ const chartData = computed(() => ({
 			label: 'Usadas',
 			data: [usadas],
 			backgroundColor: '#2563eb', // azul
-			borderRadius: 10,
-			barThickness: 14,
-			stack: 'stack1'
+			borderRadius: { topLeft: 10, bottomLeft: 10 },
+			barThickness: 10, //grosor
+			stack: 'stack1',
+			borderSkipped: false
+
 		},
 		{
 			label: 'Restantes',
 			data: [restantes],
 			backgroundColor: '#f97316', // naranja
-			borderRadius: 10,
-			barThickness: 14,
-			stack: 'stack1'
+			borderRadius: { topRight: 10, bottomRight: 10 },
+			barThickness: 10, //grosor
+			stack: 'stack1',
+			borderSkipped: false
+
 		}
 	]
 }))

@@ -1,5 +1,5 @@
 <template>
-	<div class="d-flex justify-content-between">
+	<div class="d-flex justify-content-between fw-medium">
 		<h6>Datos personales</h6>
 		<button class="btn btn-outline-dark border-0"><i class="bi bi-pencil"></i> Editar datos</button>
 	</div>

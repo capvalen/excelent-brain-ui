@@ -3,7 +3,10 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 // Para usar los iconos
 import "bootstrap-icons/font/bootstrap-icons.css";
+import '@fortawesome/fontawesome-free/css/all.min.css'
+
 import "./style.css"
+
 import dayjs from 'dayjs'
 import 'dayjs/locale/es'
 dayjs.locale('es') //Configurar el idioma globalmente

@@ -94,11 +94,23 @@
 						</li>
 						<li class="nav-item" role="presentation">
 							<button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane"
-								type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false"><i class="bi bi-brightness-high"></i> Datos personales</button>
+								type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false"><i class="bi bi-person-square"></i> Datos personales</button>
 						</li>
 						<li class="nav-item" role="presentation">
 							<button class="nav-link" id="citas-tab" data-bs-toggle="tab" data-bs-target="#citas-tab-pane"
-								type="button" role="tab" aria-controls="citas-tab-pane" aria-selected="false"><i class="bi bi-brightness-high"></i> Citas & Paquetes</button>
+								type="button" role="tab" aria-controls="citas-tab-pane" aria-selected="false"><i class="bi bi-person-video3"></i> Citas & Paquetes</button>
+						</li>
+						<li class="nav-item" role="presentation">
+							<button class="nav-link" id="citas-tab" data-bs-toggle="tab" data-bs-target="#historial-tab-pane"
+								type="button" role="tab" aria-controls="historial-tab-pane" aria-selected="false"><i class="bi bi-file-text"></i> Historial clínico (24)</button>
+						</li>
+						<li class="nav-item" role="presentation">
+							<button class="nav-link" id="citas-tab" data-bs-toggle="tab" data-bs-target="#triaje-tab-pane"
+								type="button" role="tab" aria-controls="triaje-tab-pane" aria-selected="false"><i class="bi bi-shield-plus"></i> Triaje & Seguridad</button>
+						</li>
+						<li class="nav-item" role="presentation">
+							<button class="nav-link" id="citas-tab" data-bs-toggle="tab" data-bs-target="#recetas-tab-pane"
+								type="button" role="tab" aria-controls="recetas-tab-pane" aria-selected="false"><i class="bi bi-shield-plus"></i> Recetas & Órdenes</button>
 						</li>
 						<li class="nav-item" role="presentation">
 							<button class="nav-link" id="disabled-tab" data-bs-toggle="tab" data-bs-target="#disabled-tab-pane"
@@ -123,6 +135,18 @@
 								tabindex="0">
 								<CitasPaquetes></CitasPaquetes>
 							</div>
+							<div class="tab-pane fade" id="historial-tab-pane" role="tabpanel" aria-labelledby="historial-tab"
+								tabindex="0">
+								<HistorialClinico></HistorialClinico>
+							</div>
+							<div class="tab-pane fade" id="triaje-tab-pane" role="tabpanel" aria-labelledby="historial-tab"
+								tabindex="0">
+								<TriajeYSeguridad></TriajeYSeguridad>
+							</div>
+							<div class="tab-pane fade" id="recetas-tab-pane" role="tabpanel" aria-labelledby="recetas-tab"
+								tabindex="0">
+								<RecetasYOrdenes></RecetasYOrdenes>
+							</div>
 							<div class="tab-pane fade" id="disabled-tab-pane" role="tabpanel" aria-labelledby="disabled-tab"
 								tabindex="0">...</div>
 						</div>
@@ -136,6 +160,9 @@
 import Resumen from '../../components/Pacientes/Resumen.vue'
 import Profile from '../../components/Pacientes/Profile.vue'
 import CitasPaquetes from '../../components/Pacientes/CitasPaquetes.vue'
+import HistorialClinico from '../../components/Pacientes/HistorialClinico.vue'
+import TriajeYSeguridad from '../../components/Pacientes/TriajeYSeguridad.vue'
+import RecetasYOrdenes from '../../components/Pacientes/RecetasYOrdenes.vue'
 
 </script>
 <style>
@@ -143,5 +170,11 @@ import CitasPaquetes from '../../components/Pacientes/CitasPaquetes.vue'
 	--bs-bg-opacity: .1;
 	color: #6f42c1 !important;
 	border-color: #6f42c1 !important;
+}
+.nav-tabs .nav-link{
+	color: #434d4d;
+}
+.nav-tabs .nav-link.active{
+	font-weight: 600 !important;
 }
 </style>
